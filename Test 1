@@ -13,6 +13,8 @@ function UI.createWindow(name)
 	Frame1["ZIndex"] = 2
 	Frame1["BorderSizePixel"] = 0
 	Frame1["BackgroundColor3"] = Color3.new(0.352941, 0.352941, 0.352941)
+	Frame1["Draggable"] = true
+	Frame1["Active"] = true
 	----Frame1----
 	--Frame2--
 	local Frame2 = Instance.new("Frame",Frame1)
