@@ -1,0 +1,105 @@
+local UI = {}
+function UI.CreateWindow()
+	local Converted = {
+		["_Window"] = Instance.new("ScreenGui");
+		["_DragBar"] = Instance.new("Frame");
+		["_Blocker"] = Instance.new("Frame");
+		["_UICorner"] = Instance.new("UICorner");
+		["_Background"] = Instance.new("Frame");
+		["_UICorner1"] = Instance.new("UICorner");
+		["_Title"] = Instance.new("TextLabel");
+		["_Close"] = Instance.new("TextButton");
+		["_LocalScript"] = Instance.new("LocalScript");
+	}
+
+	-- Properties:
+
+	Converted["_Window"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Converted["_Window"].Name = "Window"
+	Converted["_Window"].Parent = game.CoreGui
+
+	Converted["_DragBar"].BackgroundColor3 = Color3.fromRGB(90.00000223517418, 90.00000223517418, 90.00000223517418)
+	Converted["_DragBar"].BorderSizePixel = 0
+	Converted["_DragBar"].Position = UDim2.new(0.281308413, 0, 0.368663609, 0)
+	Converted["_DragBar"].Size = UDim2.new(0.414953262, 0, 0.0276497696, 0)
+	Converted["_DragBar"].ZIndex = 2
+	Converted["_DragBar"].Name = "DragBar"
+	Converted["_DragBar"].Parent = Converted["_Window"]
+	Converted["_DragBar"].Draggable = true
+	Converted["_DragBar"].Active = true
+
+	Converted["_Blocker"].BackgroundColor3 = Color3.fromRGB(90.00000223517418, 90.00000223517418, 90.00000223517418)
+	Converted["_Blocker"].BorderSizePixel = 0
+	Converted["_Blocker"].Position = UDim2.new(-0.000223108247, 0, 0.551450074, 0)
+	Converted["_Blocker"].Size = UDim2.new(1.00053895, 0, 0.428205222, 0)
+	Converted["_Blocker"].ZIndex = 2
+	Converted["_Blocker"].Name = "Blocker"
+	Converted["_Blocker"].Parent = Converted["_DragBar"]
+
+	Converted["_UICorner"].CornerRadius = UDim.new(0, 9)
+	Converted["_UICorner"].Parent = Converted["_DragBar"]
+
+	Converted["_Background"].BackgroundColor3 = Color3.fromRGB(62.00000390410423, 62.00000390410423, 62.00000390410423)
+	Converted["_Background"].Position = UDim2.new(-0.000223039504, 0, 0.66036731, 0)
+	Converted["_Background"].Size = UDim2.new(1.00053871, 0, 10.3805685, 0)
+	Converted["_Background"].Name = "Background"
+	Converted["_Background"].Parent = Converted["_DragBar"]
+
+	Converted["_UICorner1"].CornerRadius = UDim.new(0, 9)
+	Converted["_UICorner1"].Parent = Converted["_Background"]
+
+	Converted["_Title"].Font = Enum.Font.JosefinSans
+	Converted["_Title"].Text = "Name"
+	Converted["_Title"].TextColor3 = Color3.fromRGB(0, 0, 0)
+	Converted["_Title"].TextSize = 14
+	Converted["_Title"].TextXAlignment = Enum.TextXAlignment.Left
+	Converted["_Title"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Converted["_Title"].BackgroundTransparency = 1
+	Converted["_Title"].Position = UDim2.new(0.00675675692, 0, 0.166666672, 0)
+	Converted["_Title"].Size = UDim2.new(0, 409, 0, 19)
+	Converted["_Title"].ZIndex = 3
+	Converted["_Title"].Name = "Title"
+	Converted["_Title"].Parent = Converted["_DragBar"]
+
+	Converted["_Close"].Font = Enum.Font.Unknown
+	Converted["_Close"].Text = "X"
+	Converted["_Close"].TextColor3 = Color3.fromRGB(255, 0, 0)
+	Converted["_Close"].TextScaled = true
+	Converted["_Close"].TextSize = 14
+	Converted["_Close"].TextWrapped = true
+	Converted["_Close"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Converted["_Close"].BackgroundTransparency = 1
+	Converted["_Close"].Position = UDim2.new(0.961711705, 0, 0.166666672, 0)
+	Converted["_Close"].Size = UDim2.new(0, 17, 0, 17)
+	Converted["_Close"].ZIndex = 3
+	Converted["_Close"].Name = "Close"
+	Converted["_Close"].Parent = Converted["_DragBar"]
+
+	-- Fake Module Scripts:
+
+	local fake_module_scripts = {}
+
+
+	-- Fake Local Scripts:
+
+	local function GUCW_fake_script() -- Fake Script: StarterGui.BoxedUI.Window.DragBar.Close.LocalScript
+		local script = Instance.new("LocalScript")
+		script.Name = "LocalScript"
+		script.Parent = Converted["_Close"]
+		local req = require
+		local require = function(obj)
+			local fake = fake_module_scripts[obj]
+			if fake then
+				return fake()
+			end
+			return req(obj)
+		end
+
+		script.Parent.Activated:Connect(function()
+			script.Parent.Parent.Parent:Destroy()
+		end)
+	end
+
+	coroutine.wrap(GUCW_fake_script)()
+end
+return UI
