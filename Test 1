@@ -103,7 +103,7 @@ function UI.createWindow(name)
 			script.Parent.Parent.Parent:Destroy()
 		end)
 	end)
-	function UI.createTab(name)
+	function createWindow.createTab(name)
 		--TextButton1--
 		local TextButton1 = Instance.new("TextButton",Frame7)
 		TextButton1["TextWrapped"] = true
