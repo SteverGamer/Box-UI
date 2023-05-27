@@ -5,79 +5,120 @@ function UI.createWindow(name)
 	ScreenGui1["Name"] = "Window"
 	ScreenGui1["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
 	----ScreenGui1----
+	--Frame1--
+	local Frame1 = Instance.new("Frame",ScreenGui1)
+	Frame1["Name"] = "DragBar"
+	Frame1["Position"] = UDim2.new(0.281308413, 0, 0.368663609, 0)
+	Frame1["Size"] = UDim2.new(0, 444, 0, 24)
+	Frame1["ZIndex"] = 2
+	Frame1["BorderSizePixel"] = 0
+	Frame1["BackgroundColor3"] = Color3.new(0.352941, 0.352941, 0.352941)
+	----Frame1----
 	--Frame2--
-	local Frame2 = Instance.new("Frame",ScreenGui1)
-	Frame2["Name"] = "DragBar"
-	Frame2["Position"] = UDim2.new(0.281308413, 0, 0.368663609, 0)
-	Frame2["Size"] = UDim2.new(0, 444, 0, 24)
+	local Frame2 = Instance.new("Frame",Frame1)
+	Frame2["Name"] = "Blocker"
+	Frame2["Position"] = UDim2.new(-0.000223108247, 0, 0.551450074, 0)
+	Frame2["Size"] = UDim2.new(0, 444, 0, 10)
 	Frame2["ZIndex"] = 2
 	Frame2["BorderSizePixel"] = 0
 	Frame2["BackgroundColor3"] = Color3.new(0.352941, 0.352941, 0.352941)
 	----Frame2----
-	--Frame3--
-	local Frame3 = Instance.new("Frame",Frame2)
-	Frame3["Name"] = "Blocker"
-	Frame3["Position"] = UDim2.new(-0.000223108247, 0, 0.551450074, 0)
-	Frame3["Size"] = UDim2.new(0, 444, 0, 10)
-	Frame3["ZIndex"] = 2
-	Frame3["BorderSizePixel"] = 0
-	Frame3["BackgroundColor3"] = Color3.new(0.352941, 0.352941, 0.352941)
-	----Frame3----
-	--UICorner4--
-	local UICorner4 = Instance.new("UICorner",Frame2)
-	UICorner4["CornerRadius"] = UDim.new(0, 9)
-	----UICorner4----
-	--Frame5--
-	local Frame5 = Instance.new("Frame",Frame2)
-	Frame5["Size"] = UDim2.new(0, 444, 0, 249)
-	Frame5["Position"] = UDim2.new(-0.000223039504, 0, 0.66036731, 0)
-	Frame5["Name"] = "Background"
-	Frame5["BackgroundColor3"] = Color3.new(0.243137, 0.243137, 0.243137)
-	----Frame5----
-	--UICorner6--
-	local UICorner6 = Instance.new("UICorner",Frame5)
-	UICorner6["CornerRadius"] = UDim.new(0, 9)
-	----UICorner6----
-	--TextLabel7--
-	local TextLabel7 = Instance.new("TextLabel",Frame2)
-	TextLabel7["TextColor3"] = Color3.new(0, 0, 0)
-	TextLabel7["Text"] = name
-	TextLabel7["TextXAlignment"] = Enum.TextXAlignment.Left
-	TextLabel7["Size"] = UDim2.new(0, 409, 0, 19)
-	TextLabel7["Font"] = Enum.Font.JosefinSans
-	TextLabel7["Name"] = "Title"
-	TextLabel7["Position"] = UDim2.new(0.00675675692, 0, 0.166666672, 0)
-	TextLabel7["BackgroundTransparency"] = 1
-	TextLabel7["ZIndex"] = 3
-	TextLabel7["TextSize"] = 14
-	TextLabel7["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel7----
-	--TextButton8--
-	local TextButton8 = Instance.new("TextButton",Frame2)
-	TextButton8["TextWrapped"] = true
-	TextButton8["TextColor3"] = Color3.new(1, 0, 0)
-	TextButton8["Text"] = "X"
-	TextButton8["TextSize"] = 14
-	TextButton8["Size"] = UDim2.new(0, 17, 0, 17)
-	TextButton8["Font"] = Enum.Font.Unknown
-	TextButton8["Name"] = "Close"
-	TextButton8["Position"] = UDim2.new(0.961711705, 0, 0.166666672, 0)
-	TextButton8["BackgroundTransparency"] = 1
-	TextButton8["ZIndex"] = 3
-	TextButton8["TextScaled"] = true
-	TextButton8["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextButton8----
-	--Script9--
-	local Script9 = Instance.new("Script",TextButton8)
-	----Script9----
-	spawn(function() --Source for Script9
-		local script = Script9
+	--UICorner3--
+	local UICorner3 = Instance.new("UICorner",Frame1)
+	UICorner3["CornerRadius"] = UDim.new(0, 9)
+	----UICorner3----
+	--Frame4--
+	local Frame4 = Instance.new("Frame",Frame1)
+	Frame4["Size"] = UDim2.new(0, 444, 0, 249)
+	Frame4["Position"] = UDim2.new(-0.000223039504, 0, 0.66036731, 0)
+	Frame4["Name"] = "Background"
+	Frame4["BackgroundColor3"] = Color3.new(0.243137, 0.243137, 0.243137)
+	----Frame4----
+	--UICorner5--
+	local UICorner5 = Instance.new("UICorner",Frame4)
+	UICorner5["CornerRadius"] = UDim.new(0, 9)
+	----UICorner5----
+	--Frame6--
+	local Frame6 = Instance.new("Frame",Frame4)
+	Frame6["Name"] = "Splitter"
+	Frame6["Position"] = UDim2.new(0.139639631, 0, 0.0321285129, 0)
+	Frame6["Size"] = UDim2.new(0, 7, 0, 242)
+	Frame6["BorderSizePixel"] = 0
+	Frame6["BackgroundColor3"] = Color3.new(0.352941, 0.352941, 0.352941)
+	----Frame6----
+	--Frame7--
+	local Frame7 = Instance.new("Frame",Frame6)
+	Frame7["BackgroundTransparency"] = 1
+	Frame7["Position"] = UDim2.new(-8.71428585, 0, 0, 0)
+	Frame7["Size"] = UDim2.new(0, 61, 0, 240)
+	Frame7["Name"] = "TabHolder"
+	Frame7["BorderSizePixel"] = 0
+	Frame7["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----Frame7----
+	--UIListLayout8--
+	local UIListLayout8 = Instance.new("UIListLayout",Frame7)
+	UIListLayout8["SortOrder"] = Enum.SortOrder.LayoutOrder
+	UIListLayout8["Padding"] = UDim.new(0, 5)
+	----UIListLayout8----
+	--UIPadding9--
+	local UIPadding9 = Instance.new("UIPadding",Frame7)
+	----UIPadding9----
+	--TextLabel10--
+	local TextLabel10 = Instance.new("TextLabel",Frame1)
+	TextLabel10["TextColor3"] = Color3.new(0, 0, 0)
+	TextLabel10["Text"] = "Name"
+	TextLabel10["TextXAlignment"] = Enum.TextXAlignment.Left
+	TextLabel10["Size"] = UDim2.new(0, 409, 0, 19)
+	TextLabel10["Font"] = Enum.Font.JosefinSans
+	TextLabel10["Name"] = "Title"
+	TextLabel10["Position"] = UDim2.new(0.00675675692, 0, 0.166666672, 0)
+	TextLabel10["BackgroundTransparency"] = 1
+	TextLabel10["ZIndex"] = 3
+	TextLabel10["TextSize"] = 14
+	TextLabel10["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel10----
+	--TextButton11--
+	local TextButton11 = Instance.new("TextButton",Frame1)
+	TextButton11["TextWrapped"] = true
+	TextButton11["TextColor3"] = Color3.new(1, 0, 0)
+	TextButton11["Text"] = "X"
+	TextButton11["TextSize"] = 14
+	TextButton11["Size"] = UDim2.new(0, 17, 0, 17)
+	TextButton11["Font"] = Enum.Font.Unknown
+	TextButton11["Name"] = "Close"
+	TextButton11["Position"] = UDim2.new(0.961711705, 0, 0.166666672, 0)
+	TextButton11["BackgroundTransparency"] = 1
+	TextButton11["ZIndex"] = 3
+	TextButton11["TextScaled"] = true
+	TextButton11["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextButton11----
+	--Script12--
+	local Script12 = Instance.new("Script",TextButton11)
+	----Script12----
+	spawn(function() --Source for Script12
+		local script = Script12
 		script.Parent.Activated:Connect(function()
 			script.Parent.Parent.Parent:Destroy()
 		end)
 	end)
-	function UI.createButton(name)
-		
+	function UI.createTab(name)
+		--TextButton1--
+		local TextButton1 = Instance.new("TextButton",Frame7)
+		TextButton1["TextWrapped"] = true
+		TextButton1["TextColor3"] = Color3.new(0, 0, 0)
+		TextButton1["Text"] = "Tab"
+		TextButton1["Font"] = Enum.Font.SourceSansBold
+		TextButton1["Name"] = "Tab"
+		TextButton1["Position"] = UDim2.new(0, 0, 0.104166664, 0)
+		TextButton1["TextSize"] = 14
+		TextButton1["Size"] = UDim2.new(0, 60, 0, 25)
+		TextButton1["TextScaled"] = true
+		TextButton1["BackgroundColor3"] = Color3.new(0.290196, 0.290196, 0.290196)
+		----TextButton1----
+		--UICorner2--
+		local UICorner2 = Instance.new("UICorner",TextButton1)
+		UICorner2["CornerRadius"] = UDim.new(0, 5)
+		----UICorner2----
 	end
 end
 return UI
